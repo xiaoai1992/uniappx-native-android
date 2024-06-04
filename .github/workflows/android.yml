@@ -19,6 +19,16 @@ jobs:
         java-version: '18'
         distribution: 'temurin'
         cache: gradle
+    - name: Create a new module
+      run: |
+        mkdir libs
+        cd libs
+        gradle init --type pom
+        echo "dependencies {
+          implementation project(':libs')
+        }" >> ../app/build.gradle
+        echo "include 'libs'" >> ../settings.gradle
+        cd ..
     - name: Generate debug keystore
       run: |
         keytool -genkey -v -keystore app/debug.keystore -storepass ${{ secrets.KEYSTORE_PASSWORD }} -alias androiddebugkey -keypass ${{ secrets.KEYSTORE_PASSWORD }} -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US" -ext "SAN=dns:localhost,ip:127.0.0.1"

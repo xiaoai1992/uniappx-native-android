@@ -19,9 +19,9 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file("debug.keystore")
+            storeFile file("../app/debug.keystore")
             storePassword ${{ secrets.ORG_GRADLE_PROJECT_DEBUG_STORE_PASSWORD }}
-            keyAlias ${{ secrets.ORG_GRADLE_PROJECT_DEBUG_KEY_ALIAS }}
+            keyAlias "androiddebugkey"
             keyPassword ${{ secrets.ORG_GRADLE_PROJECT_DEBUG_KEY_PASSWORD }}
         }
     }

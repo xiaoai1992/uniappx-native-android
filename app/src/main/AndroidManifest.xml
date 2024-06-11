@@ -15,11 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kuxplus"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Kuxplus">
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true"-->
+<!--            android:label="@string/app_name"-->
+<!--            android:theme="@style/Theme.Kuxplus">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity android:name="io.dcloud.uniapp.UniAppActivity" android:configChanges="orientation|keyboard|keyboardHidden|smallestScreenSize|screenLayout|screenSize|mcc|mnc|fontScale|navigation|uiMode" android:exported="true" android:screenOrientation="portrait" android:theme="@style/UniAppX.Activity.DefaultTheme" android:windowSoftInputMode="adjustResize" tools:replace="android:exported,android:theme,android:configChanges,android:windowSoftInputMode,android:screenOrientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

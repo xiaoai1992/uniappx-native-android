@@ -4,8 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'cn.uvuejs.uniModules.kuxPlusAccelerometer'
-                    
+    namespace 'cn.uvuejs.uniModules.kuxPlusDevice'
     compileSdk 34
 
     defaultConfig {
@@ -31,9 +30,8 @@ android {
 }
 
 dependencies {
-    compileOnly fileTree(include: ['*.aar'], dir: '../app/libs')
-	compileOnly fileTree(include: ['*.aar'], dir: './libs')
-    compileOnly fileTree(include: ['*.aar'], dir: '../uniappx/libs')
+    compileOnly fileTree(include: ['*.aar', '*.jar'], dir: '../app/libs')
+	compileOnly fileTree(include: ['*.aar', '*.jar'], dir: './libs')
     compileOnly "com.alibaba:fastjson:1.2.83"
     compileOnly "androidx.core:core-ktx:1.10.1"
     compileOnly 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8'

@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">kux-plus</string>
+    <string name="app_name">
+        kux-plus
+    </string>
 </resources>

@@ -26,7 +26,7 @@ open class GenPagesIndexIndex : BasePage {
             val __ins = getCurrentInstance()!!;
             val _ctx = __ins.proxy as GenPagesIndexIndex;
             val _cache = __ins.renderCache;
-            val title = ref("Hello");
+            val title = ref("Hello22");
             val plus = IPlus(accelerometer = useAccelerometer());
             val getCurrentAcceleration = fun(){
                 plus.accelerometer.getCurrentAcceleration(fun(a){

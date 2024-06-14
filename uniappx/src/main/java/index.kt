@@ -102,7 +102,7 @@ open class UniAppConfig : AppConfig {
     override var appid: String = "__UNI__A7C19B9";
     override var versionName: String = "1.0.0";
     override var versionCode: String = "100";
-    override var uniCompilerVersion: String = "4.18";
+    override var uniCompilerVersion: String = "4.19";
     constructor(){}
 }
 fun definePageRoutes() {
@@ -117,7 +117,6 @@ fun defineAppConfig() {
     __uniConfig.tabBar = __uniTabBar as Map<String, Any>?;
     __uniConfig.conditionUrl = "";
     __uniConfig.uniIdRouter = utsMapOf();
-    __uniConfig.themeConfig = utsMapOf();
     __uniConfig.ready = true;
 }
 fun getApp(): GenApp {

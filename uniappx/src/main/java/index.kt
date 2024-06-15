@@ -15,6 +15,7 @@ import kotlinx.coroutines.Deferred;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.async;
 import io.dcloud.uniapp.appframe.AppConfig;
+import uts.sdk.modules.kuxPlusAccelerometer.IAccelerometer;
 import io.dcloud.uniapp.extapi.exit as uni_exit;
 import io.dcloud.uniapp.extapi.showToast as uni_showToast;
 var firstBackTime: Number = 0;
@@ -71,6 +72,10 @@ val GenAppClass = CreateVueAppComponent(GenApp::class.java, fun(): VueComponentO
     return GenApp(instance);
 }
 );
+open class IPlus (
+    @JsonNotNull
+    open var accelerometer: IAccelerometer,
+) : UTSObject()
 val GenPagesIndexIndexClass = CreateVueComponent(GenPagesIndexIndex::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexIndex.inheritAttrs, inject = GenPagesIndexIndex.inject, props = GenPagesIndexIndex.props, propsNeedCastKeys = GenPagesIndexIndex.propsNeedCastKeys, emits = GenPagesIndexIndex.emits, components = GenPagesIndexIndex.components, styles = GenPagesIndexIndex.styles, setup = fun(props: ComponentPublicInstance): Any? {
         return GenPagesIndexIndex.setup(props as GenPagesIndexIndex);

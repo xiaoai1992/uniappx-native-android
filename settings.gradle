@@ -1,0 +1,25 @@
+pluginManagement {
+	repositories {
+		flatDir {
+			dirs 'libs'
+		}
+		google()
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        flatDir {
+            dirs('./plugins/')
+        }
+    }
+}
+rootProject.name = "debug-kux-audio-player"
+include ':app'
+include ':uniappx'
+include ':kux-audio-player'

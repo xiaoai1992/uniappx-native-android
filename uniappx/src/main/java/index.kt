@@ -1,5 +1,5 @@
 @file:Suppress("UNCHECKED_CAST", "USELESS_CAST", "INAPPLICABLE_JVM_NAME")
-package uni.UNIA7C19B9;
+package uni.UNI79D8002;
 import io.dcloud.uniapp.*;
 import io.dcloud.uniapp.extapi.*;
 import io.dcloud.uniapp.framework.*;
@@ -15,7 +15,6 @@ import kotlinx.coroutines.Deferred;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.async;
 import io.dcloud.uniapp.appframe.AppConfig;
-import uts.sdk.modules.kuxPlusAccelerometer.IAccelerometer;
 import io.dcloud.uniapp.extapi.exit as uni_exit;
 import io.dcloud.uniapp.extapi.showToast as uni_showToast;
 var firstBackTime: Number = 0;
@@ -72,10 +71,6 @@ val GenAppClass = CreateVueAppComponent(GenApp::class.java, fun(): VueComponentO
     return GenApp(instance);
 }
 );
-open class IPlus (
-    @JsonNotNull
-    open var accelerometer: IAccelerometer,
-) : UTSObject()
 val GenPagesIndexIndexClass = CreateVueComponent(GenPagesIndexIndex::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexIndex.inheritAttrs, inject = GenPagesIndexIndex.inject, props = GenPagesIndexIndex.props, propsNeedCastKeys = GenPagesIndexIndex.propsNeedCastKeys, emits = GenPagesIndexIndex.emits, components = GenPagesIndexIndex.components, styles = GenPagesIndexIndex.styles, setup = fun(props: ComponentPublicInstance): Any? {
         return GenPagesIndexIndex.setup(props as GenPagesIndexIndex);
@@ -98,8 +93,8 @@ fun main(app: IApp) {
     (createApp()["app"] as VueApp).mount(app);
 }
 open class UniAppConfig : AppConfig {
-    override var name: String = "kux-plus";
-    override var appid: String = "__UNI__A7C19B9";
+    override var name: String = "debug-kux-audio-player";
+    override var appid: String = "__UNI__79D8002";
     override var versionName: String = "1.0.0";
     override var versionCode: String = "100";
     override var uniCompilerVersion: String = "4.19";

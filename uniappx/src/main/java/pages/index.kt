@@ -1,5 +1,5 @@
 @file:Suppress("UNCHECKED_CAST", "USELESS_CAST", "INAPPLICABLE_JVM_NAME")
-package uni.UNI79D8002;
+package uni.UNIA7C19B9;
 import io.dcloud.uniapp.*;
 import io.dcloud.uniapp.extapi.*;
 import io.dcloud.uniapp.framework.*;
@@ -14,7 +14,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Deferred;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.async;
-import uts.sdk.modules.kuxAudioPlayer.createAudioPlayer;
+import uts.sdk.modules.kuxPlusAccelerometer.AccelerometerOption;
+import uts.sdk.modules.kuxPlusAccelerometer.useAccelerometer;
 open class GenPagesIndexIndex : BasePage {
     constructor(instance: ComponentInternalInstance) : super(instance) {}
     companion object {
@@ -25,29 +26,34 @@ open class GenPagesIndexIndex : BasePage {
             val __ins = getCurrentInstance()!!;
             val _ctx = __ins.proxy as GenPagesIndexIndex;
             val _cache = __ins.renderCache;
-            val audioPlayer = createAudioPlayer();
-            audioPlayer.src = "https://web-ext-storage.dcloud.net.cn/uni-app/ForElise.mp3";
-            audioPlayer.onError(fun(error){
-                console.log(error, " at pages/index/index.uvue:16");
-            }
-            );
-            val onPlay = fun(){
-                audioPlayer.play();
-            }
-            ;
-            val onPause = fun(){
-                audioPlayer.pause();
+            val title = ref("Hello333");
+            val plus = IPlus(accelerometer = useAccelerometer());
+            val getCurrentAcceleration = fun(){
+                plus.accelerometer.getCurrentAcceleration(fun(a){
+                    console.log("Acceleration\nx:" + a.xAxis + "\ny:" + a.yAxis + "\nz:" + a.zAxis, " at pages/index/index.uvue:24");
+                }
+                );
             }
             ;
-            val onStop = fun(){
-                audioPlayer.stop();
+            getCurrentAcceleration();
+            val watchId = plus.accelerometer.watchAcceleration(fun(a){
+                console.log("Acceleration\nx:" + a.xAxis + "\ny:" + a.yAxis + "\nz:" + a.zAxis, " at pages/index/index.uvue:31");
             }
-            ;
+            , fun(err){
+                console.log(err, " at pages/index/index.uvue:33");
+            }
+            , AccelerometerOption(frequency = 2000));
+            console.log("10秒后自动关闭监听", " at pages/index/index.uvue:36");
+            setTimeout(fun(){
+                plus.accelerometer.clearWatch(watchId);
+            }
+            , 10000);
             return fun(): Any? {
-                return createElementVNode("view", null, utsArrayOf(
-                    createElementVNode("button", utsMapOf("style" to normalizeStyle(utsMapOf("margin-bottom" to "30px")), "type" to "primary", "onClick" to onPlay), "开始播放", 4),
-                    createElementVNode("button", utsMapOf("style" to normalizeStyle(utsMapOf("margin-bottom" to "30px")), "type" to "primary", "onClick" to onPause), "暂停播放", 4),
-                    createElementVNode("button", utsMapOf("type" to "primary", "onClick" to onStop), "停止播放")
+                return createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
+                    createElementVNode("image", utsMapOf("class" to "logo", "src" to "/static/logo.png")),
+                    createElementVNode("view", utsMapOf("class" to "text-area"), utsArrayOf(
+                        createElementVNode("text", utsMapOf("class" to "title"), toDisplayString(unref(title)), 1)
+                    ))
                 ));
             }
             ;
@@ -63,7 +69,7 @@ open class GenPagesIndexIndex : BasePage {
             }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("logo" to padStyleMapOf(utsMapOf("height" to 100, "width" to 100, "marginTop" to 100, "marginRight" to "auto", "marginBottom" to 25, "marginLeft" to "auto")), "title" to padStyleMapOf(utsMapOf("fontSize" to 18, "color" to "#8f8f94", "textAlign" to "center")));
+                return utsMapOf("content" to padStyleMapOf(utsMapOf("display" to "flex", "alignItems" to "center", "justifyContent" to "center")), "logo" to padStyleMapOf(utsMapOf("height" to "200rpx", "width" to "200rpx", "marginTop" to "200rpx", "marginBottom" to "50rpx")), "title" to padStyleMapOf(utsMapOf("fontSize" to "36rpx", "color" to "#8f8f94")));
             }
         var inheritAttrs = true;
         var inject: Map<String, Map<String, Any?>> = utsMapOf();

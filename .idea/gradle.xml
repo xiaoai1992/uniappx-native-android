@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/kux-audio-player" />
             <option value="$PROJECT_DIR$/kux-plus-accelerometer" />
             <option value="$PROJECT_DIR$/kux-plus-device" />
             <option value="$PROJECT_DIR$/uniappx" />

@@ -20,5 +20,3 @@ dependencyResolutionManagement {
 rootProject.name = "kux-plus"
 include ':app'
 include ':uniappx'
-include ':kux-plus-accelerometer'
-include ':kux-plus-device'

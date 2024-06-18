@@ -1,5 +1,5 @@
 @file:Suppress("UNCHECKED_CAST", "USELESS_CAST", "INAPPLICABLE_JVM_NAME")
-package uni.UNI79D8002;
+package uni.UNIA7C19B9;
 import io.dcloud.uniapp.*;
 import io.dcloud.uniapp.extapi.*;
 import io.dcloud.uniapp.framework.*;
@@ -93,8 +93,8 @@ fun main(app: IApp) {
     (createApp()["app"] as VueApp).mount(app);
 }
 open class UniAppConfig : AppConfig {
-    override var name: String = "debug-kux-audio-player";
-    override var appid: String = "__UNI__79D8002";
+    override var name: String = "kux-plus";
+    override var appid: String = "__UNI__A7C19B9";
     override var versionName: String = "1.0.0";
     override var versionCode: String = "100";
     override var uniCompilerVersion: String = "4.19";

@@ -36,7 +36,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.aar'], dir: './libs')
+    implementation fileTree(include: ['*.aar', '*.jar'], dir: './libs')
+	implementation fileTree(include: ['*.aar', '*.jar'], dir: '../app/libs')
     implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.recyclerview:recyclerview:1.0.0")
     implementation("androidx.appcompat:appcompat:1.0.0")
@@ -59,5 +60,4 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
     implementation("com.squareup.okhttp3:okhttp:3.12.12")
     implementation("com.github.getActivity:XXPermissions:18.0")
-    implementation project(':kux-audio-player')
 }

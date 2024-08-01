@@ -19,6 +19,8 @@ dependencyResolutionManagement {
         }
     }
 }
-rootProject.name = "debug-kux-pack-app"
+rootProject.name = "sxzfnewzft-app"
 include ':app'
 include ':uniappx'
+include ':yy-request'
+include ':yy-webview'
